@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MVC_MultipleTables.Models.Employee>
+@using MVC_MultipleTables.Models;
+<div style="font-family:Arial">
+    @{
+        ViewBag.Title = "Employee List";
+    }
+    @{
+        Html.RenderPartial("_WebInfo");
+    }
+    <h2>Employee List</h2>
+    <ul>
+        @foreach (Employee employee in @Model)
+        {
+            <li>@Html.ActionLink(employee.Name, "Details", new { id = employee.EmployeeId })</li>
+        }
+    </ul>
+    @Html.ActionLink("Back to Department List", "Index", "Department")
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
